@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "DraftGuard",
+  "version": "1.0.0",
+  "description": "Auto-saves and restores text you type in inputs, textareas, and contenteditable fields (last 3 versions, local only).",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

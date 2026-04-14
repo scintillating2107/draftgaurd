@@ -1,0 +1,122 @@
+/* DraftGuard — minimal UI that stays out of site layouts */
+
+.draftguard-root {
+  all: initial;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  z-index: 2147483646;
+}
+
+.draftguard-btn {
+  all: initial;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2147483646;
+  padding: 2px 6px;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  opacity: 0.92;
+  transition: opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.draftguard-btn:hover,
+.draftguard-btn:focus-visible {
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .draftguard-btn {
+    background: rgba(30, 30, 30, 0.96);
+    color: #f3f4f6;
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.draftguard-menu {
+  all: initial;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2147483647;
+  min-width: 180px;
+  max-width: min(300px, calc(100vw - 24px));
+  max-height: min(200px, 34vh);
+  overflow: auto;
+  padding: 4px;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  color: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  .draftguard-menu {
+    background: rgba(28, 28, 28, 0.98);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #f3f4f6;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.draftguard-menu-title {
+  all: initial;
+  display: block;
+  padding: 3px 6px 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-family: inherit;
+}
+
+.draftguard-menu-item {
+  all: initial;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6px 8px;
+  margin: 1px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  color: inherit;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.draftguard-menu-item:hover,
+.draftguard-menu-item:focus-visible {
+  background: rgba(59, 130, 246, 0.12);
+  outline: none;
+}
+
+.draftguard-menu-item--meta {
+  all: initial;
+  display: block;
+  font-size: 9px;
+  color: #6b7280;
+  font-family: inherit;
+  margin-top: 1px;
+}
